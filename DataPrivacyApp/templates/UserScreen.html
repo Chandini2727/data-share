@@ -1,0 +1,64 @@
+{% load static %}
+<html>
+<head>
+<title>Protecting Data Privacy for Permissioned Blockchains using Identity-Based Encryption</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link href="{% static 'style1.css' %}" rel="stylesheet" type="text/css" />
+</head>
+<!---
+
+-->
+<body>
+  <div class="home-page">
+    <div class="d1">
+       <h1>
+          <span>S</span>
+          <span>H</span>
+          <span>A</span>
+          <span>R</span>
+          <span>E</span>
+          <span> </span>
+          <span> </span>
+          <span>Y</span>
+          <span>O</span>
+          <span>U</span>
+          <span>R</span>
+          <span> </span>
+          <span> </span>
+          <span>D</span>
+          <span>A</span>
+          <span>T</span>
+          <span>A</span>
+
+       </h1>
+      </div>
+    <div class="navbar">
+        <img src="{% static 'images/logo.png' %}" class="logo">
+        <div class="bb1" ><a href="{% url 'PostMessage' %}"> <button type="button">Post Message</button></a></div>
+        <div class="bb2" ><a href="{% url 'ViewMessage' %}"> <button type="button"> View Message</button></a></div>
+        <div class="bb3" ><a href="{% url 'index' %}"> <button type="button"> Logout</button></a></div>
+       </div>
+       <div class="ali">
+       <font size="4" color="white"><center>{{ data|safe }}</center></font>
+      </div>
+     </div>
+
+     
+    <div class="bubbles">
+        <img src="{% static 'images/bubble.png' %}" alt="">
+        <img src="{% static 'images/bubble.png' %}" alt="">
+        <img src="{% static 'images/bubble.png' %}" alt="">
+        <img src="{% static 'images/bubble.png' %}" alt="">
+        <img src="{% static 'images/bubble.png' %}" alt="">
+        <img src="{% static 'images/bubble.png' %}" alt="">
+        <img src="{% static 'images/bubble.png' %}" alt="">
+        <img src="{% static 'images/bubble.png' %}" alt="">
+        
+    </div>
+</div>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,103 @@
+{% load static %}
+<html>
+<head>
+<title>Data Share</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link href="{% static 'style1.css' %}" rel="stylesheet" type="text/css" />
+<script language="javascript">
+	function validate(formObj)
+	{
+	if(formObj.t1.value.length==0)
+	{
+	alert("Please Enter Username");
+	formObj.t1.focus();
+	return false;
+	}
+	if(formObj.t2.value.length==0)
+	{
+	alert("Please Enter Password");
+	formObj.t2.focus();
+	return false;
+	}
+	formObj.actionUpdateData.value="update";
+	return true;
+	}
+	</script>
+	 <script language="javascript" type="text/javascript" src="datetimepicker.js">
+</script>
+</head>
+  
+<body>
+	<div class="home-page">
+	  <div class="c1">
+	  <h1>
+		  <span>L</span>
+		  <span>O</span>
+		  <span>G</span>
+		  <span>I</span>
+		  <span>N</span>
+		  <br>
+		  <span> </span>
+		  <span>&nbsp;</span>
+		  <span> </span>
+		  <span>H</span>
+		  <span>E</span>
+		  <span>R</span>
+		  <span>E</span>
+		  <span>.</span>
+		  <span>.</span>
+		  <span>.</span>
+	   </h1>
+	  </div>
+	  <div class="navbar">
+		  <img src="{% static 'images/logo.png' %}" class="logo">
+		  <div class="bub">
+		  <a href="{% url 'index' %}"> <button type="button">Home</button></a>
+		  </div>
+		  <div class="center">
+			<div class="container">
+			   <label for="show" class="close-btn fas fa-times" title="close"></label>
+			   <div class="text">
+				  Login Form
+			   </div>
+			   <form name="f1" method="post" action={% url 'LoginAction' %} onsubmit="return validate(this);">
+				{% csrf_token %}<br/>
+				<font size="" color="red"><center>{{ data }}</center></font>
+				  <div class="data">
+					 <label>Username</label>
+					 <input type="text" name="t1" required>
+				  </div>
+				  <div class="data">
+					 <label>Password</label>
+					 <input type="password" name="t2" required>
+				  </div>
+				  
+				  <div class="btn">
+					 <div class="inner"></div>
+					 <button type="submit">login</button>
+				  </div>
+				  <div class="signup-link">
+					 Not a member? <a href="{% url 'Signup' %}">Signup now</a>
+				  </div>
+			   </form>
+			</div>
+		 </div>
+	   </div>
+	  <div class="bubbles">
+		  <img src="{% static 'images/bubble.png' %}" alt="">
+		  <img src="{% static 'images/bubble.png' %}" alt="">
+		  <img src="{% static 'images/bubble.png' %}" alt="">
+		  <img src="{% static 'images/bubble.png' %}" alt="">
+		  <img src="{% static 'images/bubble.png' %}" alt="">
+		  <img src="{% static 'images/bubble.png' %}" alt="">
+		  <img src="{% static 'images/bubble.png' %}" alt="">
+		  <img src="{% static 'images/bubble.png' %}" alt="">
+		  
+	  </div>
+  </div>
+
+  
+  
+  </body>
+
+</html>

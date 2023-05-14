@@ -1,0 +1,149 @@
+{% load static %}
+<html>
+<head>
+<title>Data Share</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link href="{% static 'style2.css' %}" rel="stylesheet" type="text/css" />
+<script language="javascript">
+	function validate(formObj)
+	{
+	if(formObj.t1.value.length==0)
+	{
+	alert("Please Enter username");
+	formObj.t1.focus();
+	return false;
+	}
+	if(formObj.t2.value.length==0)
+	{
+	alert("Please Enter password");
+	formObj.t2.focus();
+	return false;
+	}
+	
+	if(formObj.t3.value.length==0)
+	{
+	alert("Please Enter Contact No");
+	formObj.t3.focus();
+	return false;
+	}
+	if(isNaN(formObj.t3.value)){
+		alert("Contact No must be numeric");
+		formObj.t3.focus();
+		return false;
+	}
+	if(formObj.t4.value.length==0)
+	{
+	alert("Please Enter Email Id");
+	formObj.t4.focus();
+	return false;
+	}
+	var filter = /^([a-zA-Z0-9_\.\-])+\@([a-z]+\.)+(com)+$/;
+    if (!filter.test(formObj.t4.value)) {
+		window.alert('Please enter valid email address');
+		formObj.t4.focus();
+		return false;
+	}
+	if(formObj.t5.value.length==0)
+	{
+	alert("Please Enter Address");
+	formObj.t5.focus();
+	return false;
+	}
+	return true;
+	}
+	</script>
+	 <script language="javascript" type="text/javascript" src="datetimepicker.js">
+</script>
+</head>
+<!---
+
+-->
+<body>
+	<div class="home-page">
+	  <div class="c1">
+	  <h1>
+		  <span>R</span>
+		  <span>E</span>
+		  <span>G</span>
+		  <span>I</span>
+		  <span>S</span>
+		  <span>T</span>
+		  <span>E</span>
+		  <span>R</span>
+		  <br>
+		  <span> </span>
+		  <span>&nbsp;</span>
+		  <span> </span>
+		  <span>H</span>
+		  <span>E</span>
+		  <span>R</span>
+		  <span>E</span>
+		  <span>.</span>
+		  <span>.</span>
+		  <span>.</span>
+	   </h1>
+	  </div>
+	  <div class="navbar">
+		  <img src="{% static 'images/logo.png' %}" class="logo">
+		  <div class="but">
+		  <a href="{% url 'index' %}"> <button type="button">Home</button></a>
+		  </div>
+		  <div class="center">
+			<div class="container">
+			   <label for="show" class="close-btn fas fa-times" title="close"></label>
+			   <div class="text">
+				  Registration Form
+			   </div>
+			   <form name="f1" method="post" action={% url 'SignupAction' %} onsubmit="return validate(this);">
+				{% csrf_token %}<br/>
+				<font size="" color="red"><center>{{ data|safe }}</center></font>
+				<div class="data">
+					<label>Username</label>
+					<input type="text" name="t1" required>
+				 </div>
+				 <div class="data">
+					<label>Password</label>
+					<input type="password" name="t2" required>
+				 </div>
+				 <div class="data">
+				   <label>Contact</label>
+				   <input type="text" name="t3" required>
+				</div>
+				<div class="data">
+				   <label>Email</label>
+				   <input type="text" name="t4" required>
+				</div>
+				<div class="data">
+				   <label>Address</label>
+				   <input type="text" name="t5" required>
+				</div>
+				 <div class="btn">
+					<div class="inner"></div>
+					<button type="submit" value="submit" name="t6">REGISTER</button>
+				 </div>
+				 <div class="signup-link">
+				   Already a member? <a href="{% url 'Login' %}">Login now</a>
+				</div>
+			   </form>
+			</div>
+		 </div>
+		
+	   </div>
+	  <div class="bubbles">
+		  <img src="{% static 'images/bubble.png' %}" alt="">
+		  <img src="{% static 'images/bubble.png' %}" alt="">
+		  <img src="{% static 'images/bubble.png' %}" alt="">
+		  <img src="{% static 'images/bubble.png' %}" alt="">
+		  <img src="{% static 'images/bubble.png' %}" alt="">
+		  <img src="{% static 'images/bubble.png' %}" alt="">
+		  <img src="{% static 'images/bubble.png' %}" alt="">
+		  <img src="{% static 'images/bubble.png' %}" alt="">
+		  
+	  </div>
+  </div>
+
+  
+  
+  </body>
+
+</html>
